@@ -1,0 +1,7 @@
+{
+  "cmake.configureArgs": [
+    "-DCMAKE_PREFIX_PATH=/home/wty/Programs/mambaforge/envs/jax/lib/python3.11/site-packages/torch/share/cmake",
+    "-DDOWNLOAD_DATASETS=OFF",
+    "-DCREATE_SCRIPTMODULES=ON"
+  ]
+}

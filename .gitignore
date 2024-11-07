@@ -69,4 +69,3 @@ cmake-build-*/
 # extern
 extern/*
 !extern/CMakeLists.txt
-.vscode/

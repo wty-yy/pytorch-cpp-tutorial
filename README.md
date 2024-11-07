@@ -16,6 +16,13 @@
 |      Linux (gcc 9, 10, 11)      | [![Status](https://github.com/prabhuomkar/pytorch-cpp/actions/workflows/build_ubuntu.yml/badge.svg?branch=master)](https://github.com/prabhuomkar/pytorch-cpp/actions?query=workflow%3Aci-build-ubuntu) |
 |    Windows (msvc 2019, 2022)  | [![Status](https://github.com/prabhuomkar/pytorch-cpp/actions/workflows/build_windows.yml/badge.svg?branch=master)](https://github.com/prabhuomkar/pytorch-cpp/actions?query=workflow%3Aci-build-windows) |
 
+## VSCode Config
+当打开vscode时cmake会自动执行CMakeLists.txt，可能会导致自动开始下载libtorch，`ctrl+shift+p`点击`CMake:Cancel Build`，删除`build`文件夹。
+
+首先判断自己是否有libtorch，如果在Python中安装了PyTorch则直接通过`python -c 'import torch; print(torch.utils.cmake_prefix_path)'`找到路径，修改`.vscode/setting.json`中修改`-DCMAKE_PREFIX_PATH=`后面的路径即可。
+
+再创建Cache, `ctrl+shift+p`点击`CMake: Delete Cache and Reconfigure`即可，看下方的日志，是否有下载的信息，如果仍然有，在`setting.json`中查看是否有配置出错。
+
 ## Table of Contents
 
 This repository provides tutorial code in C++ for deep learning researchers to learn PyTorch _(i.e. Section 1 to 3)_  
